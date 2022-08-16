@@ -1,0 +1,56 @@
+// USERS TABLE
+1- create users table
+
+rails g migration CreateUsers
+
+2- add columns to users table
+
+rails g migration AddDetailsToUsers name:string photo:string bio:string post_counter:integer
+
+
+// POSTS TABLE
+1- create posts table
+
+rails g migration CreatePosts
+
+3- add columns
+
+rails g migration AddDetailsToPosts authorId:integer:index title:string text:string comments_counter:integer likes_counter:integer
+
+4- Add user foreing key to Posts table
+
+rails g migration AddUserRefToPosts authorId:references
+
+// COMMENTS TABLE
+
+1. create table
+
+rails g migration CreateComments
+
+2. Add details to table
+
+rails g migration AddDetailsToComments authorId:integer:index postId:integer:index text:string
+
+3. Add user FK and post FK to table
+
+rails g migration AddUserRefToComments user:references
+
+rails g migration AddPostRefToComments post:references
+
+// COMMENTS TABLE
+
+1. create table
+
+rails g migration CreateLikes
+
+2. add details to comments table
+
+rails g migration AddDetailsToLikes authorId:integer:index postId:integer:index
+
+2. Add user FK and post FK to table
+
+rails g migration AddUserRefToLikes user:references
+
+rails g migration AddPostRefToLikes post:references
+
+

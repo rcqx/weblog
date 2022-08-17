@@ -1,4 +1,3 @@
-# rubocop:disable all
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_816_233_924) do
+ActiveRecord::Schema[7.0].define(version: 20_220_817_154_046) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -20,13 +19,13 @@ ActiveRecord::Schema[7.0].define(version: 20_220_816_233_924) do
     t.datetime 'updated_at', null: false
     t.integer 'authorId'
     t.integer 'postId'
-    t.string 'text'
-    t.bigint 'user_id', null: false
+    t.text 'text'
     t.bigint 'post_id', null: false
+    t.bigint 'author_id', null: false
     t.index ['authorId'], name: 'index_comments_on_authorId'
+    t.index ['author_id'], name: 'index_comments_on_author_id'
     t.index ['postId'], name: 'index_comments_on_postId'
     t.index ['post_id'], name: 'index_comments_on_post_id'
-    t.index ['user_id'], name: 'index_comments_on_user_id'
   end
 
   create_table 'likes', force: :cascade do |t|
@@ -34,12 +33,12 @@ ActiveRecord::Schema[7.0].define(version: 20_220_816_233_924) do
     t.datetime 'updated_at', null: false
     t.integer 'authorId'
     t.integer 'postId'
-    t.bigint 'user_id', null: false
+    t.bigint 'author_id', null: false
     t.bigint 'post_id', null: false
     t.index ['authorId'], name: 'index_likes_on_authorId'
+    t.index ['author_id'], name: 'index_likes_on_author_id'
     t.index ['postId'], name: 'index_likes_on_postId'
     t.index ['post_id'], name: 'index_likes_on_post_id'
-    t.index ['user_id'], name: 'index_likes_on_user_id'
   end
 
   create_table 'posts', force: :cascade do |t|
@@ -47,12 +46,12 @@ ActiveRecord::Schema[7.0].define(version: 20_220_816_233_924) do
     t.datetime 'updated_at', null: false
     t.integer 'authorId'
     t.string 'title'
-    t.string 'text'
+    t.text 'text'
     t.integer 'comments_counter'
     t.integer 'likes_counter'
-    t.bigint 'user_id', null: false
+    t.bigint 'author_id', null: false
     t.index ['authorId'], name: 'index_posts_on_authorId'
-    t.index ['user_id'], name: 'index_posts_on_user_id'
+    t.index ['author_id'], name: 'index_posts_on_author_id'
   end
 
   create_table 'users', force: :cascade do |t|
@@ -60,13 +59,13 @@ ActiveRecord::Schema[7.0].define(version: 20_220_816_233_924) do
     t.datetime 'updated_at', null: false
     t.string 'name'
     t.string 'photo'
-    t.string 'bio'
+    t.text 'bio'
     t.integer 'post_counter'
   end
 
   add_foreign_key 'comments', 'posts'
-  add_foreign_key 'comments', 'users'
+  add_foreign_key 'comments', 'users', column: 'author_id'
   add_foreign_key 'likes', 'posts'
-  add_foreign_key 'likes', 'users'
-  add_foreign_key 'posts', 'users'
+  add_foreign_key 'likes', 'users', column: 'author_id'
+  add_foreign_key 'posts', 'users', column: 'author_id'
 end

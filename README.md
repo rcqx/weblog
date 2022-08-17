@@ -1,24 +1,36 @@
-# README
+# Weblog: Creating data model
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>  A multi-user blog application with time-stamped entries built with RoR
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+This repository includes files with Ruby that can be used to test the created main classes from the app
 
-* System dependencies
+Clone this link into your local device.
 
-* Configuration
+## Authors
 
-* Database creation
+👤 **Jose**
 
-* Database initialization
+- GitHub: [@jr-cast](https://github.com/jr-cast)
+- Twitter: [@josercastanos](https://twitter.com/josercastanos)
+- LinkedIn: [@jr-cast](https://linkedin.com/in/jr-cast)
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues, and feature requests are welcome!
 
-* Deployment instructions
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

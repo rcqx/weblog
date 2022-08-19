@@ -15,11 +15,11 @@ rails g migration CreatePosts
 
 3- add columns
 
-rails g migration AddDetailsToPosts authorId:integer:index title:string text:string comments_counter:integer likes_counter:integer
+rails g migration AddDetailsToPosts title:string text:string comments_counter:integer likes_counter:integer
 
 4- Add user foreing key to Posts table
 
-rails g migration AddUserRefToPosts authorId:references
+rails g migration AddUserRefToPosts user:references
 
 // COMMENTS TABLE
 
@@ -29,15 +29,15 @@ rails g migration CreateComments
 
 2. Add details to table
 
-rails g migration AddDetailsToComments authorId:integer:index postId:integer:index text:string
+rails g migration AddTextToComments text:text
 
 3. Add user FK and post FK to table
 
 rails g migration AddUserRefToComments user:references
 
-rails g migration AddPostRefToComments post:references
+rails g migration AddPostRefToLikes post:references
 
-// COMMENTS TABLE
+// LIKES TABLE
 
 1. create table
 
@@ -53,4 +53,11 @@ rails g migration AddUserRefToLikes user:references
 
 rails g migration AddPostRefToLikes post:references
 
+
+
+
+user1 = User.create(name: 'John', photo: 'link', bio: 'atest');
+post1 = Post.create(title: 'test', text: 'some text', user_id: user1.id);
+comment1 = Comment.create(text: 'this is a test', user_id: user1.id, post_id: post1.id)
+like1 = Like.create(user_id: user1.id, post_id: post1.id)
 

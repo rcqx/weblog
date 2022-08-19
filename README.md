@@ -1,4 +1,4 @@
-# Weblog: Processing data in models 💽 💾
+# Weblog: Models validations and unit testing 🧪 📋
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

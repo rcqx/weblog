@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
-  scope :post, -> { joins(:posts).where(post: {post_id: id}) }
+  scope :post, -> { joins(:posts).where(post: { post_id: id }) }
 
   after_create :update_comments_counter
 

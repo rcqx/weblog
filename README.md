@@ -1,4 +1,4 @@
-# Weblog: Creating data model
+# Weblog: Processing data in models 💽 💾
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

@@ -6,7 +6,11 @@ class Post < ApplicationRecord
   scope :comments, -> { joins(:comments).where(comments: { post_id: id }) }
   scope :likes, -> { joins(:likes).where(likes: { post_id: id }) }
 
-  def update_post_counter
+  validates :title, presence: true, length: { in: 1..250 }
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
+
+  def update_posts_counter
     user.update(post_counter: Post.where(user_id: user.id).count)
   end
 

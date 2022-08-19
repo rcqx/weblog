@@ -11,11 +11,7 @@ class Post < ApplicationRecord
   end
 
   def last_5_comments
-    comments.limit(5)
-  end
-
-  def update_comments_counter
-    Post.find_by_id(id).update(comments_counter: comments.where(post_id: id).count)
+    comments.oder(created_at: :desc).limit(5)
   end
 
   def update_likes_counter

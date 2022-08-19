@@ -5,6 +5,6 @@ class User < ApplicationRecord
   scope :posts, -> { joins(:posts).where(posts: { user_id: id }) }
 
   def last_3_posts
-    posts.limit(3)
+    posts.order(created_at: :desc).limit(3)
   end
 end

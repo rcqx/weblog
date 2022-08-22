@@ -1,7 +1,6 @@
 body {
   margin-left: 10em;
   margin-right: 10em;
-  background-color: black;
 }
 
 .postCont {
@@ -40,4 +39,23 @@ body {
   width: 50%;
   text-align: right;
   margin-top: 6em;
+}
+
+.post {
+  border: 3px solid black;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  margin: 1em;
+}
+
+.bio {
+  border: 3px solid black;
+  font-size: 1.25em;
+  padding: 1em;
+  margin-bottom: 1em;
+  margin: 0.5em;
+}
+
+.post h3 {
+  text-align: right;
 }

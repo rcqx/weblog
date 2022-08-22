@@ -1,15 +1,84 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  margin-left: 10em;
+  margin-right: 10em;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  background-color: #9370db;
+}
+
+button {
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: bold;
+  border: 2px solid black;
+  width: 40%;
+  margin: 1em;
+}
+
+.postCont {
+  display: flex;
+  height: 16em;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: white;
+}
+
+.pic {
+  width: 15em;
+  height: 15em;
+  border: 3px solid black;
+}
+
+.userCard {
+  width: 75%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border: 3px solid black;
+}
+
+.userCard h2 {
+  font-size: 4em;
+  width: 40%;
+  text-align: center;
+}
+
+.userCard h3 {
+  font-size: 1.5em;
+  width: 50%;
+  text-align: right;
+  margin-top: 6em;
+}
+
+.post {
+  padding: 1em;
+  margin-top: 1em;
+  width: 95%;
+  background-color: white;
+}
+
+.comment {
+  padding: 1em;
+  margin: 0.25em;
+  width: 93%;
+  background-color: white;
+}
+
+.bio {
+  font-size: 1.25em;
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  background-color: white;
+  width: 94.5%;
+}
+
+.post h3 {
+  text-align: right;
+}

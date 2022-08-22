@@ -1,4 +1,4 @@
-# Weblog: Models validations and unit testing 🧪 📋
+# Weblog: Controllers 🎮🎮🎮
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

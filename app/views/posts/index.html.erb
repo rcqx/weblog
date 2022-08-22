@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weblog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="postCont">
+      <div class="pic"></div>
+       <div class='userCard'>
+        <h2>John Doe</h2>
+        <h3>Number of posts: X</h3>
+       </div>
+    </div>
+
+  <div class='post'>
+  <h2>Post 1</h2>
+  <p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. 
+  </p>
+  <h3>Number of posts: X</h3>
+  </div>
+
+  <div class='comment'>
+    <p>Tyler: Nice comment!</p>
+    <p>John: Cool way to put it</p>
+    <p>Fernando: LOL!</p>
+  </div>
+  
+  <div class='post'>
+  <h2>Post 2</h2>
+  <p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. 
+  </p>
+  <h3>Number of posts: X</h3>
+  </div>
+
+  <div class='comment'>
+    <p>Tyler: Nice comment!</p>
+    <p>John: Cool way to put it</p>
+    <p>Fernando: LOL!</p>
+  </div>
+
+  <button>
+    Pagination
+  </button>
+
+  </body>
+</html>

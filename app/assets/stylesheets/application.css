@@ -64,7 +64,8 @@ button {
 }
 
 .comment {
-  padding: 0.5em;
+  padding: 1em;
+  margin-bottom: 0.5em;
   margin: 0.25em;
   width: 93%;
   background-color: white;
@@ -77,6 +78,7 @@ button {
   margin-bottom: 0.5em;
   background-color: white;
   width: 94.5%;
+
 }
 
 .post h3 {

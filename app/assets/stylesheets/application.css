@@ -3,8 +3,9 @@ body {
   margin-right: 10em;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-content: space-around;
   align-items: center;
+  background-color: #9370db;
 }
 
 button {
@@ -19,7 +20,7 @@ button {
 .postCont {
   display: flex;
   height: 16em;
-  width: 100%;
+  width: 95%;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
@@ -33,12 +34,13 @@ button {
 }
 
 .userCard {
-  border: 3px solid black;
   width: 75%;
   height: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: white;
+  border: 3px solid black;
 }
 
 .userCard h2 {
@@ -55,26 +57,28 @@ button {
 }
 
 .post {
-  border: 3px solid black;
   padding: 1em;
   margin-top: 1em;
   width: 95%;
+  background-color: white;
 }
 
 .comment {
-  border: 3px solid black;
   padding: 1em;
   margin-bottom: 0.5em;
-  margin: 1em;
-  width: 95%;
+  margin: 0.25em;
+  width: 93%;
+  background-color: white;
 }
 
 .bio {
-  border: 3px solid black;
   font-size: 1.25em;
   padding: 1em;
-  margin-bottom: 1em;
-  margin: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  background-color: white;
+  width: 94.5%;
+
 }
 
 .post h3 {

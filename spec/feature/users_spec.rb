@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users_controller_features', type: :feature do
-  
   describe 'GET #index features' do
     it 'display specific user name in the screen' do
       visit '/users'

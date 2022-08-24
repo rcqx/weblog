@@ -2,21 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'Posts_controller_features', type: :feature do
   describe 'GET #index features' do
-  
-  it 'display specific user name in the screen' do
-    visit '/users/1/posts'
-    expect(page).to have_text('John Doe')
-  end
+    it 'display specific user name in the screen' do
+      visit '/users/1/posts'
+      expect(page).to have_text('John Doe')
+    end
 
-  it 'display specific users last post' do
-    visit '/users/1/posts'
-    expect(page).to have_text('Post 1')
-  end
+    it 'display specific users last post' do
+      visit '/users/1/posts'
+      expect(page).to have_text('Post 1')
+    end
 
-  it 'displays number of posts on user account' do
-    visit '/users/1/posts'
-    expect(page).to have_text('Number of posts: X')
-  end
+    it 'displays number of posts on user account' do
+      visit '/users/1/posts'
+      expect(page).to have_text('Number of posts: X')
+    end
   end
 
   describe 'GET #show features' do

@@ -1,4 +1,4 @@
-# Weblog: Controllers 🎮🎮🎮
+# Weblog: Controllers Specs 🎮🧪
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

@@ -8,6 +8,24 @@ This repository includes files with Ruby that can be used to test the created ma
 
 Clone this link into your local device.
 
+To run test make sure that rspec-rails and capybara libraries are installed in your project
+
+To double check please run:
+```
+bundle install
+```
+This will install both gems if they were missing in your environment.
+
+To run all tests including, user and post controllers (both features and request) please run rspec in the main project folder:
+```
+rspec
+```
+
+To run test for a specific test run rspec and add the location of the file:
+```
+rspec ./spec/requests/posts_spec.rb
+```
+
 ## Authors
 
 👤 **Jose**

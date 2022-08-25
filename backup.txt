@@ -56,8 +56,8 @@ rails g migration AddPostRefToLikes post:references
 
 
 
-user1 = User.create(name: 'John', photo: 'link', bio: 'atest');
-post1 = Post.create(title: 'test', text: 'some text', user_id: user1.id);
+user1 = User.create(name: 'John Doe', photo: 'A url', bio: 'A full stack web developer');
+post1 = Post.create(title: 'Ruby on Rails', text: 'I started leaningn RoR recently', user_id: user1.id);
 comment1 = Comment.create(text: 'this is a test', user_id: user1.id, post_id: post1.id)
 like1 = Like.create(user_id: user1.id, post_id: post1.id)
 

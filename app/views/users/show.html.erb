@@ -1,57 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Weblog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
   <div class="postCont">
   <div class="pic"></div>
    <div class='userCard'>
-    <h2>John Doe</h2>
-    <h3>Number of posts: X</h3>
+    <h2><%= @user.name %></h2>
+    <h3>Number of posts: <%= @posts.length %></h3>
    </div>
   </div>
 
-  <div class='bio'>
+ <div class='bio'>
   <h2>Bio:</h2>
   <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. Nunc aliquet in lectus id dictum. Curabitur libero dolor, semper eu sodales dictum, euismod eu metus. Etiam dapibus arcu at sem ultrices, in venenatis nulla malesuada. Sed tincidunt ullamcorper lorem, eget aliquam nisi suscipit ac. Maecenas malesuada odio sit amet pretium blandit. Curabitur et sem et massa consequat suscipit. Fusce tincidunt leo sit amet orci eleifend, ut tempus nisi tincidunt. Sed auctor elementum cursus. Etiam rhoncus arcu vulputate turpis facilisis mattis. Praesent lobortis pulvinar orci, nec tristique urna laoreet sit amet.
+    <%= @user.bio %>
   </p>
-  </div>
+</div> 
 
-  <div class='post'>
-  <h2>Post 1</h2>
+<% @posts.each do |post| %>
+ <div class='post'>
+  <h2><%= post.title %></h2>
   <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. 
+    <%= post.text %>
   </p>
-  <h3>Number of posts: X</h3>
-  </div>
-
-  <div class='post'>
-  <h2>Post 2</h2>
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. 
-  </p>
-  <h3>Number of posts: X</h3>
-  </div>
-
-  <div class='post'>
-  <h2>Post 2</h2>
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed volutpat lorem, in feugiat tellus. Nulla facilisi. 
-  </p>
-  <h3>Number of posts: X</h3>
-  </div>
-  </body>
+  <h3>
+    Comments: <%= post.comments.length %> 
+    Likes: <%= post.likes.length %> </h3>
+</div>
+<% end %>
 
   <button>
     See all posts
   </button>
-</html>

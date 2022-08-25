@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def last_3_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  def update_post_counter
+    User.find_by_id(id).update(post_counter: likes.where(post_id: id).count)
+  end
 end

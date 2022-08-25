@@ -5,7 +5,7 @@ class User < ApplicationRecord
   scope :posts, -> { joins(:posts).where(posts: { user_id: id }) }
 
   validates :name, presence: true, length: { in: 2..25 }
-  validates :post_counter, numericality: { greater_than_or_equal_to: 0 }
+  validates :post_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   def last_3_posts
     posts.order(created_at: :desc).limit(3)

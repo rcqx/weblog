@@ -10,15 +10,13 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
   validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
-  def update_posts_counter
-    user.update(post_counter: Post.where(user_id: user.id).count)
-  end
+  after_create :update_post_counter
 
   def last_5_comments
-    comments.oder(created_at: :desc).limit(5)
+    comments.order(created_at: :desc).limit(5)
   end
 
-  def update_likes_counter
-    Post.find_by_id(id).update(likes_counter: likes.where(post_id: id).count)
+  def update_post_counter
+    user.increment!(:post_counter)
   end
 end

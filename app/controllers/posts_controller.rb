@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
-    # @comments = @user.comments
+    # @post = Post.find(params[:id])
+    # @last = @post.last_5_comments
   end
 
   def show

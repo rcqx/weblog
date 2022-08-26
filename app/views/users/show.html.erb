@@ -13,8 +13,9 @@
   </p>
 </div> 
 
-<% @posts.each do |post| %>
- <div class='post'>
+
+  <% @last.each do |post| %>
+  <div class='post'>
   <h2><%= post.title %></h2>
   <p>
     <%= post.text %>
@@ -22,9 +23,8 @@
   <h3>
     Comments: <%= post.comments.length %> 
     Likes: <%= post.likes.length %> </h3>
-</div>
-<% end %>
+  </div>
+  <% end %> 
 
-  <button>
-    See all posts
-  </button>
+
+<%= button_to "See all posts", user_posts_path(@user_id), method: :get %>

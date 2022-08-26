@@ -13,8 +13,11 @@ button {
   font-size: 1.25em;
   font-weight: bold;
   border: 2px solid black;
-  width: 40%;
+  width: 80%;
+  height: 5em;
   margin: 1em;
+  text-align: center;
+  cursor: pointer;
 }
 
 .postCont {

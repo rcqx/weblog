@@ -17,7 +17,7 @@
     Likes: <%= post.likes.length %> 
   </h3>
 
-  <% post.comments.each do |com| %>  
+  <% post.last_5_comments.each do |com| %>  
   <div class='comment'>
     <strong><%= User.find(com.user_id).name %></strong>
     <p><%= com.text %></p>

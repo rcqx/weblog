@@ -19,5 +19,4 @@ class Post < ApplicationRecord
   def update_post_counter
     user.increment!(:post_counter)
   end
-
 end

@@ -61,3 +61,14 @@ post1 = Post.create(title: 'Ruby on Rails', text: 'I started leaningn RoR recent
 comment1 = Comment.create(text: 'this is a test', user_id: user1.id, post_id: post1.id)
 like1 = Like.create(user_id: user1.id, post_id: post1.id)
 
+
+
+
+// JOINING TABLES
+  # scope :user, -> { joins(:users).where(user: { user_id: id }) }
+  # scope :comments, -> { joins(:comments).where(comments: { post_id: id }) }
+  # scope :likes, -> { joins(:likes).where(likes: { post_id: id }) }
+  
+  # scope :posts, -> { joins(:posts).where(posts: { user_id: id }) }
+  # scope :comments, -> { joins(:comments).where(comments: { user_id: id }) }
+

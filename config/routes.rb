@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show] do 
     get 'posts/new', to: 'posts#new', as: 'new_post' #new
+    post 'posts', to: 'posts#create' #create
     resources :posts, only: [:index, :show]
-
   end
 
 end

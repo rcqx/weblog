@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     new_post = Post.new
     respond_to do |format|
@@ -8,8 +9,6 @@ class PostsController < ApplicationController
 
   def create
     new_post = Post.new(params.require(:post).permit(:title, :text))
-    # new_post.comments_counter = 0
-    # new_post.likes_counter = 0
     new_post.user_id = current_user.id
 
     respond_to do |format|

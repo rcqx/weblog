@@ -20,4 +20,9 @@
 
   </div>
 
+  <strong><%= link_to 'Add a comment', new_comment_path %></strong>
+
+  <% if flash[:error] %>
+  <code> There was an error :( </code>
+  <% end %>
 </html>

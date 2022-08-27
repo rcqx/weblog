@@ -1,5 +1,7 @@
   <div class='post'>
   <h2> Recent post by <%= @user.name %></h2>
+
+  <strong><code> <%= @post.title %></code></strong>
   <p>
       <%= @post.text %>
   </p>
@@ -18,4 +20,9 @@
 
   </div>
 
+  <strong><%= link_to 'Add a comment', new_comment_path %></strong>
+
+  <% if flash[:error] %>
+  <code> There was an error :( </code>
+  <% end %>
 </html>

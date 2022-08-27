@@ -6,6 +6,7 @@ body {
   align-content: space-around;
   align-items: center;
   background-color: #9370db;
+  min-height: 90vh;
 }
 
 button {
@@ -18,6 +19,17 @@ button {
   margin: 1em;
   text-align: center;
   cursor: pointer;
+}
+
+a {
+  font-size: 2em;
+  border: 2px solid black;
+  color: black;
+  border-radius: 0.25em;
+  text-decoration: none;
+  background-color: palegoldenrod;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .postCont {

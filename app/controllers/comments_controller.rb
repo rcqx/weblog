@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def new
     new_comment = Comment.new
     respond_to do |format|
@@ -11,15 +10,14 @@ class CommentsController < ApplicationController
     new_comment = Comment.new(params.require(:comment).permit(:text))
     new_comment.user_id = current_user.id
     new_comment.post_id = params[:id]
-    post = Post.find_by_id(params[:id])
 
     respond_to do |format|
       format.html do
         if new_comment.save
-          flash[:success] = "Comment added successfully!"
+          flash[:success] = 'Comment added successfully!'
           redirect_to user_post_url
-        else 
-          flash.now[:error] = "Error: Comment could not be saved..."
+        else
+          flash.now[:error] = 'Error: Comment could not be saved...'
           render :new, locals: { new_comment: new_comment }
         end
       end

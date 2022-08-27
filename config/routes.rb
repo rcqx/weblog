@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :new, :create]
   end
 
+  resources :likes, only: [:create]
+
   get 'users/:user_id/posts/:id/newcomment', to: 'comments#new', as: 'new_comment'
   post 'users/:user_id/posts/:id/comment', to: 'comments#create', as: 'comment'
 end

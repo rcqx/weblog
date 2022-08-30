@@ -6,7 +6,7 @@
        </div>
     </div>
 
-  <% @posts.each do |post| %>
+  <% @posts.includes(:comments, :likes).each do |post| %>
   <div class='post'>
   <h2><%= post.title %></h2>
   <p>

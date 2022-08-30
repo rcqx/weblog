@@ -1,12 +1,12 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe 'Users_controller_features', js: true, type: :feature do
-  describe 'GET #index features' do
-    it 'display specific user name in the screen' do
-      visit ('/users')
-      sleep(5)
-      expect(page).to have_text('John Doe')
-    end
+# RSpec.describe 'Users_controller_features', js: true, type: :feature do
+#   describe 'GET #index features' do
+#     it 'display specific user name in the screen' do
+#       visit ('/users')
+#       sleep(5)
+#       expect(page).to have_text('John Doe')
+#     end
 
 #     # it 'display specific user name in the screen' do
 #     #   visit '/users'
@@ -17,7 +17,7 @@ RSpec.describe 'Users_controller_features', js: true, type: :feature do
 #     #   visit '/users'
 #     #   expect(page).to have_text('Number of posts: X')
 #     # end
-  end
+  # end
 
 #   # describe 'GET #show features' do
 #   #   it 'display details of user account' do
@@ -35,4 +35,4 @@ RSpec.describe 'Users_controller_features', js: true, type: :feature do
 #   #     expect(page).to have_button('See all posts')
 #   #   end
   # end
-end
+# end

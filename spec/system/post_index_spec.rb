@@ -7,7 +7,7 @@ RSpec.describe 'User testing', js: true, type: :system do
     Rails.application.load_seed
   end
 
-  context 'User index page stories test' do
+  context 'Post index page stories test' do
     before(:example) do
       visit "users/1/posts"
     end
@@ -39,7 +39,7 @@ RSpec.describe 'User testing', js: true, type: :system do
 
     it "first comment exists on the page" do
       expect(page).to have_selector 'strong', text: 'Jane Doe'
-      expect(page).to have_selector 'p', text: 'Add some limon to it'
+      expect(page).to have_selector 'p', text: 'Add some lemon to it'
     end
 
     it 'can see how many comments a post has' do

@@ -17,5 +17,5 @@ post3 = Post.create(title: 'Capybara sucks', text: 'lmao', user_id: user2.id);
 post4 = Post.create(title: 'I know', text: 'roflmao', user_id: user3.id);
 post5 = Post.create(title: 'ror code', text: 'I started making sugar cane juice', user_id: user1.id);
 
-Comment.create(post: post5, user: user3, text: 'Add some limon to it')
+Comment.create(post: post5, user: user3, text: 'Add some lemon to it')
 Like.create(post: post5, user: user3)

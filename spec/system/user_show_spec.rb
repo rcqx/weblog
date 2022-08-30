@@ -34,7 +34,6 @@ RSpec.describe 'User testing', js: true, type: :system do
     it 'checks user images exist' do
       imgs = page.all("div[class='post'")
       expect(imgs.length).to eq(3)
-      sleep(20)
     end
 
     it "There is a button that lets me view all of a user's posts exist" do

@@ -15,3 +15,4 @@ post1 = Post.create(title: 'Ruby on Rails', text: 'I started leaningn RoR recent
 post2 = Post.create(title: 'chromDriver?', text: 'I started making bread', user_id: user1.id);
 post3 = Post.create(title: 'Capybara sucks', text: 'lmao', user_id: user2.id);
 post4 = Post.create(title: 'I know', text: 'roflmao', user_id: user3.id);
+post5 = Post.create(title: 'ror code', text: 'I started making sugar cane juice', user_id: user1.id);

@@ -25,14 +25,14 @@ RSpec.describe 'User testing', js: true, type: :system do
 
 
     it 'can see the number of posts each user has written' do
-      expect(page).to have_text('Number of posts: 2')
+      expect(page).to have_text('Number of posts: 3')
       expect(page).to have_text('Number of posts: 1')
       expect(page).to have_text('Number of posts: 1')
     end
 
     it 'redirects to users show page when clicking' do
-      first(".postCont").click_link("John Doe")
-      expect(page).to have_text('John Doe')
+      first(".postCont").click_link("Jose Ramon")
+      expect(page).to have_text('Jose Ramon')
     end
 
   end

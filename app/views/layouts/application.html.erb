@@ -11,8 +11,19 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <% if flash[:success] %>
       <h2><code><%= flash[:success] %></code></h2>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, data: {turbo: false} %>
+      <%= link_to 'Acount Settings', edit_user_registration_path %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %>
     <% end %>
     <%= yield %>
   </body>

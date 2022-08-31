@@ -55,17 +55,19 @@ rspec ./spec/requests/posts_spec.rb
 
 ## Authors
 
+👤 **Bassem**
+
+- GitHub: [@basem909](https://github.com/basem909)
+- Twitter: [@ShamsBassem](https://twitter.com/ShamsBassem)
+- LinkedIn: [@bassem-shams](https://www.linkedin.com/in/bassem-shams-126a29134/)
+
+
 👤 **Jose**
 
 - GitHub: [@jr-cast](https://github.com/jr-cast)
 - Twitter: [@josercastanos](https://twitter.com/josercastanos)
 - LinkedIn: [@jr-cast](https://linkedin.com/in/jr-cast)
 
-👤 **Bassem**
-
-- GitHub: [@basem909](https://github.com/basem909)
-- Twitter: [@ShamsBassem](https://twitter.com/ShamsBassem)
-- LinkedIn: [@bassem-shams](https://www.linkedin.com/in/bassem-shams-126a29134/)
 
 ## 🤝 Contributing
 

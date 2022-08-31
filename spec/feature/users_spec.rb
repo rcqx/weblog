@@ -1,38 +1,28 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe 'Users_controller_features', js: true, type: :feature do
-#   describe 'GET #index features' do
-#     it 'display specific user name in the screen' do
-#       visit ('/users')
-#       sleep(5)
-#       expect(page).to have_text('John Doe')
-#     end
+RSpec.describe 'Users_controller_features', type: :feature do
+  
+  before(:all) do
+    Rails.application.load_seed
+  end
 
-#     # it 'display specific user name in the screen' do
-#     #   visit '/users'
-#     #   expect(page).to have_text('Jane Doe')
-#     # end
+    it 'display comment couter in index page' do
+      visit '/users'
+      expect(page).to have_text('Number of posts:')
+    end
 
-#     # it 'display comment couter in index page' do
-#     #   visit '/users'
-#     #   expect(page).to have_text('Number of posts: X')
-#     # end
-  # end
+    it 'display details of user account' do
+      visit '/users/1'
+      expect(page).to have_text('Bio:')
+    end
 
-#   # describe 'GET #show features' do
-#   #   it 'display details of user account' do
-#   #     visit '/users/123'
-#   #     expect(page).to have_text('Bio:')
-#   #   end
+    it 'displays users latest post' do
+      visit '/users/1'
+      expect(page).to have_text('Ruby on Rails')
+    end
 
-#   #   it 'displays users latest post' do
-#   #     visit '/users/123'
-#   #     expect(page).to have_text('Post 1')
-#   #   end
-
-#   #   it 'has button for displaying more posts' do
-#   #     visit '/users/123'
-#   #     expect(page).to have_button('See all posts')
-#   #   end
-  # end
-# end
+    it 'has button for displaying more posts' do
+      visit '/users/1'
+      expect(page).to have_button('See all posts')
+    end
+end

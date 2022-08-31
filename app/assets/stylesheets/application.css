@@ -97,3 +97,19 @@ h4 {
 .post h3 {
   text-align: right;
 }
+
+.field input {
+  width: 80vw;
+  height: 2em;
+  margin: 0.5em;
+}
+
+.actions input {
+  width: 80vw;
+  height: 2em;
+  margin: 0.5em;
+  font-size: 1.25em;
+  border-radius: 0.25em;
+  background-color: #7CB9E8;
+  color: white;
+}

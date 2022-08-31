@@ -1,4 +1,4 @@
-# Weblog: integration specs for views and fix n+1 problems 🏎️🏁🏁
+# Weblog: Add devise 🔍🔍
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

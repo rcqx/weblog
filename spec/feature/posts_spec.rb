@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts_controller_features', type: :feature do
-
   before(:all) do
     Rails.application.load_seed
   end

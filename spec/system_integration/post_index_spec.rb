@@ -29,6 +29,12 @@ RSpec.describe 'User testing', js: true, type: :system do
       expect(page).to have_selector 'h2', text: 'ror code'
       expect(page).to have_selector 'h2', text: 'Ruby on Rails'
     end
+  end
+
+  context 'Post index page stories test' do
+    before(:example) do
+      visit 'users/1/posts'
+    end
 
     it 'checks post body exist' do
       expect(page).to have_selector 'p', text: 'I started making sugar cane juice'

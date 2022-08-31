@@ -1,4 +1,4 @@
-# Weblog: Add forms 📝📝
+# Weblog: integration specs for views and fix n+1 problems 🏎️🏁🏁
 
 >  A multi-user blog application with time-stamped entries built with RoR
 
@@ -60,6 +60,12 @@ rspec ./spec/requests/posts_spec.rb
 - GitHub: [@jr-cast](https://github.com/jr-cast)
 - Twitter: [@josercastanos](https://twitter.com/josercastanos)
 - LinkedIn: [@jr-cast](https://linkedin.com/in/jr-cast)
+
+👤 **Bassem**
+
+- GitHub: [@basem909](https://github.com/basem909)
+- Twitter: [@ShamsBassem](https://twitter.com/ShamsBassem)
+- LinkedIn: [@bassem-shams](https://www.linkedin.com/in/bassem-shams-126a29134/)
 
 ## 🤝 Contributing
 

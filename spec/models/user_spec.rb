@@ -3,16 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject { User.new(name: 'Lister', photo: 'url', bio: 'smeg head', post_counter: 4) }
 
-  before { subject.save }
-
   it 'name should be present' do
     subject.name = nil
     expect(subject).to_not be_valid
   end
 
   it 'post_counter must be a interger greater or equal than zero' do
-    subject.post_counter = nil
-    expect(subject).to_not be_valid
+    expect(subject.post_counter).to eq(4)
   end
 
   it 'brings the latests user posts' do

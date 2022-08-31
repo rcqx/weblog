@@ -21,8 +21,8 @@ RSpec.describe Post, type: :model do
   end
 
   it 'updates posts counter' do
-    allow(subject).to receive(:update_posts_counter).and_return(1)
-    expect(subject.update_posts_counter).to eq(1)
+    allow(subject).to receive(:update_post_counter).and_return(1)
+    expect(subject.update_post_counter).to eq(1)
   end
 
   it 'returns last 5 comments' do
@@ -31,10 +31,5 @@ RSpec.describe Post, type: :model do
                    { comment3: 3 }, { comment4: 4 },
                    { comment5: 5 }])
     expect(subject.last_5_comments.length).to eq(5)
-  end
-
-  it 'updates like counter' do
-    allow(subject).to receive(:update_likes_counter).and_return(1)
-    expect(subject.update_likes_counter).to eq(1)
   end
 end

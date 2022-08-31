@@ -1,11 +1,18 @@
-<strong><%= link_to 'Create a new post', new_user_post_path(@user_id) %></strong>
+<h4><%= link_to 'Create a new post', new_user_post_path(@user_id) %></h4>
 
-<% @users.each do |user| %>
-  <div class="postCont">
-    <div class="pic"></div>
-       <div class='userCard'>
-        <h2><%= user.name %></h2>
-        <h3>Number of posts: <%= user.post_counter %></h3>
+  <% @users.each do |user| %>
+    <div class="postCont">
+      <div class="pic">
+          <img src="https://www.example.com/image">
+            IMG
+          </img>
       </div>
-  </div>
-<% end %>
+        <div class='userCard'>
+          <%= link_to user_path(user.id) do %>
+          <h2><%= user.name %></h2>
+          <% end %>
+          <h3>Number of posts: <%= user.post_counter %></h3>
+        </div>
+    </div>
+  <% end %>
+

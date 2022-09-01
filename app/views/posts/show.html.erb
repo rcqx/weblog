@@ -9,6 +9,9 @@
     Comments: <%= @post.comments.length %> 
     Likes: <%= @post.likes.length %> 
   </h3>
+
+  <%= button_to 'Delete', user_post_path, method: :delete, data: {turbo: false} %>
+
   </div>
   
   <% @post.comments.each do |com| %>  

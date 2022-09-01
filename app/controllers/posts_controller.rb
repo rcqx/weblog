@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # load_and_authorize_resource
   def new
     new_post = Post.new
     respond_to do |format|

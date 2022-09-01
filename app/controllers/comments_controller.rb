@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def new
     new_comment = Comment.new
     respond_to do |format|
@@ -22,5 +23,10 @@ class CommentsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    Comment.destroy(params[:user_id])
+    redirect_back(fallback_location: root_path)
   end
 end

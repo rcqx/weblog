@@ -19,6 +19,11 @@
     <strong><%= User.find(com.user_id).name %></strong>
     <p><%= com.text %></p>
   </div>
+
+    <% if can? :delete, com %>
+      <%= button_to 'Delete', comment_path(com.id), method: :delete, data: {turbo: false} %>
+    <% end %>
+  
   <% end %>
 
   </div>

@@ -10,6 +10,16 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 2..25 }
   validates :post_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
+  ROLES = %i[user admin].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
+
+  def admin?
+    is?('admin')
+  end
+
   def last_3_posts
     posts.order(created_at: :desc).limit(3)
   end

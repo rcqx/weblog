@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # load_and_authorize_resource
   def new
     new_post = Post.new
     respond_to do |format|
@@ -31,5 +32,10 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    Post.destroy(params[:id])
+    redirect_to user_path(params[:user_id])
   end
 end

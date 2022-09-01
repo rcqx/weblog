@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_172153) do
     t.string "photo"
     t.string "bio"
     t.integer "post_counter"
+    t.string "role"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

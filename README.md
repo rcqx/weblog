@@ -1,4 +1,4 @@
-# Weblog: Add devise 🔍🔍
+# Weblog: Authorization rules 👮 🚓
 
 >  A multi-user blog application with time-stamped entries built with RoR
 

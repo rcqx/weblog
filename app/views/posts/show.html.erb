@@ -10,22 +10,20 @@
     Likes: <%= @post.likes.length %> 
   </h3>
   <% if can? :delete, @post %>
-    <%= button_to 'Delete', user_post_path, method: :delete, data: {turbo: false} %>
-  <% end %>
+  <%= button_to 'Delete', user_post_path, method: :delete, data: {turbo: false} %>
+<% end %>
   </div>
   
-  <% @post.comments.each do |com| %>  
+  <% @post.comments.includes(:user).each do |com| %>  
   <div class='comment'>
     <strong><%= User.find(com.user_id).name %></strong>
     <p><%= com.text %></p>
   </div>
 
-    <% if can? :delete, com %>
+   <% if can? :delete, com %>
       <%= button_to 'Delete', comment_path(com.id), method: :delete, data: {turbo: false} %>
     <% end %>
-  
   <% end %>
-
   </div>
 
   <strong><%= link_to 'Add a comment', new_comment_path %></strong>

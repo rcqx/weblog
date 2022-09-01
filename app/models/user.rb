@@ -17,4 +17,5 @@ class User < ApplicationRecord
   def update_post_counter
     User.find_by_id(id).update(post_counter: likes.where(post_id: id).count)
   end
+
 end

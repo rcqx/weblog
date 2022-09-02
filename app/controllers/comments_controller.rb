@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @post }
-      format.json { render :json => @post }
+      format.xml  { render :xml => @comments }
+      format.json { render :json => @comments }
     end
   end 
 
@@ -31,6 +31,14 @@ class CommentsController < ApplicationController
         else
           flash.now[:error] = 'Error: Comment could not be saved...'
           render :new, locals: { new_comment: new_comment }
+        end
+      end
+      format.json do
+        if @comment.save
+          render json: { comment: @comment }, status: :created
+        else
+          render json: { errors: @comment.errors.full_messages },
+             status: :unprocessable_entity
         end
       end
     end

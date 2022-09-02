@@ -1,7 +1,8 @@
 class ApiController < ApplicationController
+  
   def api
     json_comment = Comment.new(text: params[:text])
-    json_comment.user_id = params[:user_id]
+    json_comment.user_id = current_user.id
     json_comment.post_id = params[:id]
 
     if json_comment.save

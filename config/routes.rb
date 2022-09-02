@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'users/:user_id/posts/:id/newcomment', to: 'comments#new', as: 'new_comment'
   post 'users/:user_id/posts/:id/comment', to: 'comments#create', as: 'comment'
   delete 'users/:user_id/posts/:id/comment', to: 'comments#destroy'
+  
   post 'users/:user_id/posts/:id/comments.json', to: 'api#api'
 end

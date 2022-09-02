@@ -6,6 +6,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @post }
+      format.json { render :json => @post }
+    end
+  end 
+
   def create
     new_comment = Comment.new(params.require(:comment).permit(:text))
     new_comment.user_id = current_user.id

@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 2..25 }
   validates :post_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
+  before_create :generate_authentication_token
+
   ROLES = %i[user admin].freeze
 
   def is?(requested_role)
@@ -26,5 +28,9 @@ class User < ApplicationRecord
 
   def update_post_counter
     User.find_by_id(id).update(post_counter: likes.where(post_id: id).count)
+  end
+
+  def generate_authentication_token
+    self.authentication_token = Devise.friendly_token
   end
 end

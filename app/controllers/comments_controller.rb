@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
 
-    respond_to do |format|
+    respond_to do |format|user
       format.html # index.html.erb
       format.xml  { render :xml => @comments }
       format.json { render :json => @comments }
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end 
 
   def create
-    new_comment = Comment.new(params.require(:comment).permit(:text))
+    new_comment = Comment.new(params.permit(:text))
     new_comment.user_id = current_user.id
     new_comment.post_id = params[:id]
 
@@ -34,10 +34,10 @@ class CommentsController < ApplicationController
         end
       end
       format.json do
-        if @comment.save
-          render json: { comment: @comment }, status: :created
+        if new_comment.save
+          render json: { comment: new_comment }, status: :created
         else
-          render json: { errors: @comment.errors.full_messages },
+          render json: { errors: new_comment.errors.full_messages },
              status: :unprocessable_entity
         end
       end

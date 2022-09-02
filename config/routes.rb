@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show] do 
     resources :posts, only: [:index, :show, :new, :create, :destroy] do 
-      resources :comments, only: [:index]
+      resources :comments, only: [:index ]
     end
   end
 
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'users/:user_id/posts/:id/newcomment', to: 'comments#new', as: 'new_comment'
   post 'users/:user_id/posts/:id/comment', to: 'comments#create', as: 'comment'
   delete 'users/:user_id/posts/:id/comment', to: 'comments#destroy'
+  post 'users/:user_id/posts/:id/comments.json', to: 'api#api'
 end

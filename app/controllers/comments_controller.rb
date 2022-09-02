@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comments = @post.comments
 
-    respond_to do |format|user
+    respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @comments }
       format.json { render :json => @comments }
@@ -19,10 +19,11 @@ class CommentsController < ApplicationController
   end 
 
   def create
-    new_comment = Comment.new(params.permit(:text))
+
+    new_comment = Comment.new(text: comment_params[:text])
     new_comment.user_id = current_user.id
     new_comment.post_id = params[:id]
-
+  
     respond_to do |format|
       format.html do
         if new_comment.save
@@ -33,19 +34,18 @@ class CommentsController < ApplicationController
           render :new, locals: { new_comment: new_comment }
         end
       end
-      format.json do
-        if new_comment.save
-          render json: { comment: new_comment }, status: :created
-        else
-          render json: { errors: new_comment.errors.full_messages },
-             status: :unprocessable_entity
-        end
-      end
     end
+    
   end
 
   def destroy
     Comment.destroy(params[:user_id])
     redirect_back(fallback_location: root_path)
   end
+
+  private
+
+    def comment_params
+    params.require(:comment).permit(:text)
+    end
 end

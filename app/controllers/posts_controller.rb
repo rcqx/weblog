@@ -30,10 +30,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
-      format.json { 
-      tokenized  
-      render :json => @posts  }
+      format.xml { render xml: @posts }
+      format.json do
+        tokenized
+        render json: @posts
+      end
     end
   end
 

@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  
-  
   def new
     new_comment = Comment.new
     respond_to do |format|
@@ -15,20 +13,19 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @comments }
-      format.json { render :json => @comments }
+      format.xml { render xml: @comments }
+      format.json { render json: @comments }
     end
-  end 
+  end
 
   protect_from_forgery with: :null_session
   before_action :tokenized
   before_action :authenticate_user!
   def create
-
     new_comment = Comment.new(text: comment_params[:text])
     new_comment.user_id = current_user.id
     new_comment.post_id = params[:id]
-  
+
     respond_to do |format|
       format.html do
         if new_comment.save
@@ -40,7 +37,6 @@ class CommentsController < ApplicationController
         end
       end
     end
-    
   end
 
   def destroy
@@ -50,7 +46,7 @@ class CommentsController < ApplicationController
 
   private
 
-    def comment_params
+  def comment_params
     params.require(:comment).permit(:text)
-    end
+  end
 end

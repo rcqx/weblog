@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  
+  
   def new
     new_comment = Comment.new
     respond_to do |format|
@@ -18,6 +20,9 @@ class CommentsController < ApplicationController
     end
   end 
 
+  protect_from_forgery with: :null_session
+  before_action :tokenized
+  before_action :authenticate_user!
   def create
 
     new_comment = Comment.new(text: comment_params[:text])

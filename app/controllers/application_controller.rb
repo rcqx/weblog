@@ -13,12 +13,8 @@ class ApplicationController < ActionController::Base
   private
 
   def tokenized
-    puts  'TEST1'
     return nil unless params[:authentication_token]
-    puts  'TEST2'
     user = User.find_by_authentication_token(params[:authentication_token])
-    puts  'TEST3'
     sign_in(user)
-    puts  'TEST4'
   end
 end

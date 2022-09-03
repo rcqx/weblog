@@ -22,13 +22,13 @@ class ApiController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comments = @post.comments
-    render :json => @comments
+    render :json => @comments if tokenized
   end
   
   def posts_index
     @user = User.find(params[:user_id])
     @posts = @user.posts
-    render :json => @posts
+    render :json => @posts if tokenized
   end
 
 end

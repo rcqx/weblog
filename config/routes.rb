@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :users, only: [:index, :show] do 
-    resources :posts, only: [:index, :show, :new, :create, :destroy]
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do 
+      resources :comments, only: [:index ]
+    end
   end
 
   resources :likes, only: [:create]
@@ -13,4 +15,8 @@ Rails.application.routes.draw do
   get 'users/:user_id/posts/:id/newcomment', to: 'comments#new', as: 'new_comment'
   post 'users/:user_id/posts/:id/comment', to: 'comments#create', as: 'comment'
   delete 'users/:user_id/posts/:id/comment', to: 'comments#destroy'
+  
+  post 'users/:user_id/posts/:id/comment_api', to: 'api#comment_api'
+  get 'users/:user_id/posts/:id/comments_index', to: 'api#comments_index'
+  get 'users/:user_id/posts/:id/posts_index', to: 'api#posts_index'
 end

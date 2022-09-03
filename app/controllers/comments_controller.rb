@@ -6,8 +6,23 @@ class CommentsController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render xml: @comments }
+      format.json { render json: @comments }
+    end
+  end
+
+  protect_from_forgery with: :null_session
+  before_action :tokenized
+  before_action :authenticate_user!
   def create
-    new_comment = Comment.new(params.require(:comment).permit(:text))
+    new_comment = Comment.new(text: comment_params[:text])
     new_comment.user_id = current_user.id
     new_comment.post_id = params[:id]
 
@@ -27,5 +42,11 @@ class CommentsController < ApplicationController
   def destroy
     Comment.destroy(params[:user_id])
     redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
